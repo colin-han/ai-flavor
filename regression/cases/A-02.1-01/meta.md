@@ -4,7 +4,7 @@
 - source: 合成（城市散文，仿"一眼 DeepSeek"文风）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: []
 - score_ref: before ≈ 70 / after ≈ 20
 

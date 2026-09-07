@@ -4,7 +4,7 @@
 - source: 摘自 ../custom-writing/books/two-cheng/v4/04-drafts/chapters/11-橄榄枝.md（两处对话原文，中间以 `----` 标出删节；另删去了原文的 `[n]` 脚注标记以免与 A-10.4 混线；删去了"我把它叫——思维模型"一句，并把"最厉害的一套'思维模型'"改为"最厉害的一套法子"，以免破折号与外来术语干扰本 case 的变量）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: []
 - score_ref: text ≈ 12
 

@@ -4,7 +4,7 @@
 - source: 改写自 ../custom-writing/books/el-nino/v1/04-drafts/chapters/01-天变了.md（原文为 A-01.3「不是 X。是 Y」/ A-09.3「不是 X——是 Y」形态，为构造 A-01.1 夹具，统一改写为一句话内「不是 X 而是 Y」形态；段落有删节拼接）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: []
 - score_ref: before ≈ 45 / after ≈ 22
 

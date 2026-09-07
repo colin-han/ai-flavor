@@ -4,7 +4,7 @@
 - source: 合成（before 的首句直接采用 rules.md B-06 条目给出的示例句形态"雨轻轻拍打窗棂，映照她未言说的哀伤"）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: []
 - score_ref: before ≈ 70 / after ≈ 15
 

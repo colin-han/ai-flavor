@@ -4,7 +4,7 @@
 - source: 摘自 ../custom-writing/books/el-nino/v1/04-drafts/chapters/30-新的常态.md（末章结尾原文，从"他不知道自己算不算一个好人"起至"全书完"；删去了原文中"不是因为他确信自己是个好人／是因为……"一段，以免与 A-01 组混线）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: [A-02.2]
 - score_ref: before ≈ 60 / after ≈ 25
 

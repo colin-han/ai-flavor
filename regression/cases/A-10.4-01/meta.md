@@ -4,7 +4,7 @@
 - source: footnoted.md 摘自 ../custom-writing/books/two-cheng/v4/04-drafts/chapters/20-雨.md（节选拼接，保留原文 `[1][2][3]` 标记与章末尾注；正文中"这，违'仁民爱物'[2]之大本"一句由原文的程颐穷理段移入程颢段，[2] 的尾注文字也相应把主语由程颐改为程颢；另为控制破折号密度，正文数处破折号改为逗号）；orphan.md 为同一文本删去整个尾注段（改造）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: [A-09.1]
 - score_ref: footnoted ≈ 15 / orphan ≈ 45
 

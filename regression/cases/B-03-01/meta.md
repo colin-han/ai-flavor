@@ -4,7 +4,7 @@
 - source: 合成（after 对白风格参考 ../custom-writing/books/el-nino/v2/04-drafts/chapters/08-秩序真空.md 的短句、切口式对白）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: []
 - score_ref: before ≈ 65 / after ≈ 15
 

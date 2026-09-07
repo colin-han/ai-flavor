@@ -4,7 +4,7 @@
 - source: 合成（自媒体方法论短文，题材：个人品牌）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: [A-01.2, A-06.1]
 - score_ref: before ≈ 50 / after ≈ 22
 

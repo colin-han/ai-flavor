@@ -4,7 +4,7 @@
 - source: 合成（教程/方法论体，题材：代码评审推行）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: []
 - score_ref: before ≈ 65 / after ≈ 18
 

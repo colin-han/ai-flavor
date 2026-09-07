@@ -4,7 +4,7 @@
 - source: 摘自 ../custom-writing/books/two-cheng/v4/04-drafts/chapters/09-夜.md（章末原文，从"正叔，"起至章末；删去了原文的 `[4]` 脚注标记以免与 A-10.4 混线）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: [A-02.2]
 - score_ref: text ≈ 15
 

@@ -4,7 +4,7 @@
 - source: 摘自 ../custom-writing/books/el-nino/v1/04-drafts/chapters/01-天变了.md（多段拼接：把原章中带破折号的段落按原顺序抽出并合并，个别处删去中间无破折号的过渡句；未改写句子本身）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: [A-01.3]
 - score_ref: before ≈ 42 / after ≈ 22
 

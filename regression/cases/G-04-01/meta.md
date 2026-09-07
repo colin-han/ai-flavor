@@ -4,7 +4,7 @@
 - source: 合成（现实主义朴素叙事，题材：镇上修理站的一天）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: []
 - score_ref: text ≈ 12
 

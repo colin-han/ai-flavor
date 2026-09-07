@@ -4,7 +4,7 @@
 - source: 摘自 ../custom-writing/books/two-cheng/v5/04-drafts/chapters/juan1-03-zaoshi.md 的四段**连续原文**：第 58–67 行、第 69 行、第 79–103 行、第 105–116 行，段间以 `----` 标出删节（删去的是第 70–78 行的早市环境描写段与第 104 行的原文分节符）。每一段内部无任何删节、合并或改写，未改写任何字句，也未删除任何标点；已用 `diff` 与原文逐行核对为一致
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: []
 - score_ref: text ≈ 15
 

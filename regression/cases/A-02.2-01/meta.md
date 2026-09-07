@@ -4,7 +4,7 @@
 - source: 摘自 ../custom-writing/books/el-nino/v1/04-drafts/chapters/30-新的常态.md（末章倒数第二节原文，删去了结尾三段以免与 A-07.2-01 重叠）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: []
 - score_ref: before ≈ 45 / after ≈ 22
 

@@ -4,7 +4,7 @@
 - source: 合成（工作总结/调研报告体，题材：社区食堂运营三年）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: []
 - score_ref: before ≈ 55 / after ≈ 12
 

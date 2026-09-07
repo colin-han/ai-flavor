@@ -4,7 +4,7 @@
 - source: 合成（电商/公众号产品推广文，题材：耳夹式降噪耳机）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: []
 - score_ref: before ≈ 92 / after ≈ 20
 

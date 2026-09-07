@@ -4,7 +4,7 @@
 - source: 摘自 ../custom-writing/books/two-cheng/v4/04-drafts/chapters/01-雷雨.md 第 1–39 行（开篇两节，段间 `----` 为原文分节符）。**逐字照录**，唯一改动是删去三个脚注标记 `[1]`（元丰元年后）、`[2]`（一物有一物之理后）、`[3]`（仁者浑然与物同体后）——删脚注标记是为了不让 A-10.4 混进本 case 的变量。除此之外未增删或改写任何字句，也未删除任何标点；已用 `diff` 与原文逐行核对为一致
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: [A-01.2, A-01.3, A-02.2]
 - score_ref: text ≈ 15
 

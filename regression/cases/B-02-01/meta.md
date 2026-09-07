@@ -4,7 +4,7 @@
 - source: 合成（四个跨章片段，模拟长篇连载中隔了十余章的上下文）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: []
 - score_ref: before ≈ 55 / after ≈ 20
 

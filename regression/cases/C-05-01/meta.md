@@ -4,7 +4,7 @@
 - source: 合成（食评，题材：建国路口开了三十一年的祥记馄饨）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: []
 - score_ref: before ≈ 48 / after ≈ 8
 

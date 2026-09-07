@@ -4,7 +4,7 @@
 - source: even.md 摘自 ../custom-writing/books/el-nino/v1/04-drafts/chapters/01-天变了.md（多段拼接删节，破折号保持原文的分散分布）；burst.md 与 even.md **除第 7 段外逐字相同**，仅把第 7 段改写为破折号突现形态（合成）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: []
 - score_ref: even ≈ 22 / burst ≈ 40
 

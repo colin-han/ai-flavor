@@ -4,7 +4,7 @@
 - source: 合成（网文修仙外门大比章，套路与章末钩子按流行模板搭建）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: []
 - score_ref: before ≈ 60 / after ≈ 20
 

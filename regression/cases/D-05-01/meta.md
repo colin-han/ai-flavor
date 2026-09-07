@@ -4,7 +4,7 @@
 - source: 五章的"正文句 + 章末尾注"配对，**逐字照录**（含原文的 `[1]` 脚注标记），无任何删节、合并或改写；已用 `diff` 与原文逐行核对为一致。片段 1 = ../custom-writing/books/el-nino/v2/04-drafts/chapters/06-高温地狱.md 第 4 行（正文）+ 第 81 行（尾注）；片段 2 = 04-窗口期关闭.md 第 26 行 + 第 68 行；片段 3 = 05-第一道裂痕.md 第 48 行、第 52 行 + 第 85 行；片段 4 = 03-蜜月.md 第 90 行（仅尾注）；片段 5 = 01-天变了.md 第 127 行（仅尾注）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: []
 - score_ref: text ≈ 12
 

@@ -4,7 +4,7 @@
 - source: 摘自 ../custom-writing/books/two-cheng/v4/04-drafts/chapters/20-雨.md（连续两节原文；删去了原文的 `[2]` 脚注标记以免与 A-10.4 混线）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: []
 - score_ref: text ≈ 15
 

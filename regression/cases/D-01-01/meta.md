@@ -4,7 +4,7 @@
 - source: 三段**连续原文**按"片段 1/2/3"拼接，每一片段内部无任何删节、合并或改写：片段 1 = ../custom-writing/books/el-nino/v2/04-drafts/chapters/01-天变了.md 第 24–31 行；片段 2 = 同目录 04-窗口期关闭.md 第 19–48 行；片段 3 = 同目录 11-三升水.md 第 28–38 行。唯一改动是删去片段 2 中"打了等于没打，或者打了只有一部分效果。"句尾的脚注标记 `[1]`（避免 A-10.4 混入本 case 的变量）。已用 `diff` 与原文逐行核对为一致
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: []
 - score_ref: text ≈ 18
 

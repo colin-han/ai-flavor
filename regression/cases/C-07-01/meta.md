@@ -4,7 +4,7 @@
 - source: 合成（科普短文，题材："每天一万步"这个数字的来源与实际证据）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: []
 - score_ref: before ≈ 55 / after ≈ 10
 

@@ -4,7 +4,7 @@
 - source: 合成（物业告知书，题材：二次供水设施清洗消毒）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: [A-06.1]
 - score_ref: text ≈ 18
 

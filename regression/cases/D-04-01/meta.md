@@ -4,7 +4,7 @@
 - source: 六段**连续原文**按时序拼接，段间以 `----` 标出删节（删去的是段与段之间叙述性的规则分析段与心理段）。依次为 ../custom-writing/books/el-nino/v1/04-drafts/chapters/16-黄河聚落.md 第 26–44 行、同章第 54–56 行、同章第 63–65 行 ｜ 17-聚落的裂痕.md 第 21 行、同章第 38–45 行 ｜ 19-离开.md 第 36–39 行。每一段内部无任何删节、合并或改写，未改写任何字句，也未删除任何标点
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: []
 - score_ref: text ≈ 15
 

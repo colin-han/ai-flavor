@@ -4,7 +4,7 @@
 - source: 合成（公司内部意见书，题材：是否恢复每周五天坐班）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: []
 - score_ref: before ≈ 52 / after ≈ 10
 

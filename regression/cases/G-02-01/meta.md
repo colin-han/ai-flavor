@@ -4,7 +4,7 @@
 - source: 摘自 ../custom-writing/books/cenji/v1/04-drafts/chapters/ch02-zhuan.md（前三节，段间 `----` 为原文分节符），未改写任何字句
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: [A-01.3, A-02.2]
 - score_ref: text ≈ 18
 

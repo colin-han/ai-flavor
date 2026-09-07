@@ -4,7 +4,7 @@
 - source: 合成（题材：修车铺师傅口述一次轴承故障的处理；after 口语风格参考 ../custom-writing/books/el-nino/v1/04-drafts/chapters/18-老曹的试探.md 的短句、省略、不把话说完的对白）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: []
 - score_ref: before ≈ 50 / after ≈ 8
 

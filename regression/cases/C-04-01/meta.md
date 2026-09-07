@@ -4,7 +4,7 @@
 - source: 合成（个人记叙，题材：为养了十四年的柯基实施安乐死的当天）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: []
 - score_ref: before ≈ 62 / after ≈ 10
 

@@ -4,7 +4,7 @@
 - source: 合成（悬疑小说续写场景，模拟未清洗的 AI 输出直接入稿）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: []
 - score_ref: before ≈ 90 / after ≈ 15
 

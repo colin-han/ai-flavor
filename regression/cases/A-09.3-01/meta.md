@@ -4,7 +4,7 @@
 - source: 摘自 ../custom-writing/books/el-nino/v1/04-drafts/chapters/07-相变点.md 与 12-第一口.md（两章中的复合句段落按情节顺序拼接，中间删去过渡段落；未改写句子本身）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3
 - known_other_issues: [A-01.3]
 - score_ref: before ≈ 40 / after ≈ 25
 

@@ -30,7 +30,7 @@ description: 本仓库自用。用户给一段有 AI 味的例句，走"发散�
 3. **最小修复**：只针对确认过的疑似点改，不做无关改写，给出 after 文本与逐条改动说明。
    ⏸ 请用户确认修复效果。
 4. **生成 case 草稿**：
-   - case-id = `<主目标规则id>-<下一个可用两位序号>`；若目标是"规则未覆盖"的新规则，先在步骤 5 定下新 id 再命名。
+   - case-id = `<主目标规则id>-<下一个可用两位序号>`（用 `ls regression/cases/ | grep '^<主目标规则id>-'` 查已有序号）；若目标是"规则未覆盖"的新规则，先在步骤 5 定下新 id 再命名。
    - `meta.md`：`target_rules`、`source: 用户提供`、`origin: 主观样本`、`created`、`verified_at: 未验证`、`known_other_issues`、`score_ref`、文本与期望表、说明。
    - `before.md` / `after.md`。
 5. **判断 rules.md 变更类型**（可组合）：
@@ -54,7 +54,7 @@ description: 本仓库自用。用户给一段有 AI 味的例句，走"发散�
    - 结果写 `regression/runs/<YYYY-MM-DD>-<case-id>.md`（格式同 `regression/runs/2026-09-07-baseline.md`）。
    - 默认只跑受影响子集；用户明确要求"全量回归"时才跑全部 case。
    - 通过的 case 把 `verified_at` 更新为新版本号。
-10. **冲突处理**：若有旧 case 从通过变为不通过，**停下**，给出：新 case 要求什么 · 旧 case 要求什么 · 当前规则写法为何满足不了两者 · 至少两种取舍方案。
+10. **冲突处理**：退步只指 `must_hit` / `must_not_hit` 的比对结果翻转；附带命中、Layer C 分、疑似度分的变化只记入 runs 文件，不阻断。若有旧 case 从通过变为不通过，**停下**，给出：新 case 要求什么 · 旧 case 要求什么 · 当前规则写法为何满足不了两者 · 至少两种取舍方案。
     ⏸ 由用户裁决。不得自行选边、不得静默改旧 case 的期望。
 11. **精简扫描**：
     - 合并表述冗余的条目（保留判断，删重复措辞）；

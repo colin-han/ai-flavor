@@ -68,9 +68,11 @@ ok "case 目录扫描完成"
 
 # 5. 覆盖提示
 if [ "$COVERAGE" = 1 ]; then
-  echo "— 无 case 支撑的规则（R-xx / B-01 / B-05 除外）—"
+  echo "— 无 case 支撑的规则（R-xx / B-01 / B-05 / 已拆分为子规则的父 id 除外）—"
   for v in $valid; do
     case "$v" in R-*|B-01|B-05) continue ;; esac
+    # 已被子规则完整拆分的父 id 本身不是可独立命中的判定单元，不要求 case 覆盖
+    echo "$valid" | grep -q "^${v}\." && continue
     echo "$used" | tr ' ' '\n' | grep -qxF "$v" || echo "  待补 case: $v"
   done
 fi

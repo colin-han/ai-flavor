@@ -1,0 +1,6 @@
+{
+  "name": "ai-flavor",
+  "version": "0.1.0",
+  "description": "AI 味识别：判断文本会不会让读者觉得有 AI 味，输出疑似度报告（非二元判决）",
+  "author": { "name": "Kejing Han" }
+}

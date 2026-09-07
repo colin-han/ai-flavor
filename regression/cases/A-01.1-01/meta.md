@@ -5,7 +5,7 @@
 - origin: 规则覆盖夹具
 - created: 2026-09-07
 - verified_at: rules.md v3
-- known_other_issues: []
+- known_other_issues: [A-01.4, A-12]
 - score_ref: before ≈ 45 / after ≈ 22
 
 ## 文本与期望

@@ -10,7 +10,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 核心资料
 
-`references/rules.md`（AI 味特征检测清单 v2）是本项目的唯一事实来源（source of truth），所有 skill 的判断逻辑都必须以它为准，不要凭经验另起一套标准。关键结构：
+`references/rules.md`（AI 味特征检测清单 v3）是本项目的唯一事实来源（source of truth），所有 skill 的判断逻辑都必须以它为准，不要凭经验另起一套标准。关键结构：
 
 - **Layer A**：句式/词汇/结构/标点等表面特征，规则可程序化（正则+统计），分 A/B/C/D 四组（句式层 / 词汇层 / 结构层 / 标点格式层）。
 - **Layer B**：小说/长篇特有的叙事级特征（前精后 AI、长程崩塌、人物声音扁平等），需结构化统计 + LLM-judge。
@@ -19,16 +19,28 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Layer 0**：误判保护红线（R1–R6），规定"永远给疑似度区间而非二元判决"、"按文体先验调阈值"、"降权要细化到维度级"等硬约束。文体先验档和维度级降权表决定了同一特征在不同文体（小说/文学、古典文白、公文应试、营销等）里权重完全不同。
 - 末尾的"评分与定级"给出了疑似度分的计算公式和 0–100 的锚点样本，用于避免多 agent 并行打分时刻度漂移。
 
-`rules.md` 会持续演进（当前 v2），版本变更记录在文件末尾"版本"一节；改规则本身只能通过 skill 3（规则更新）完成，不要手工改写规则条目而不经过实例校验。
+`rules.md` 会持续演进（当前 v3），版本变更记录在文件末尾"版本"一节；改规则本身只能通过 `/add-flavor-case` 完成，不要手工改写规则条目而不经过实例校验。rule id 形如 `A-01.1` / `G-03` / `R-04`，定义位置为 `####` 标题或表格首列 `**ID**`。
 
-## 规划中的三个 Skill
+## Skill 与目录
 
-1. **ai味识别 skill**（对外）：输入目标内容，按 `rules.md` 的四层判据分析，输出结构化 AI 味报告。报告格式必须遵循 `rules.md` §0.2 的强制输出规范（疑似度低/中/高 + 0–100 分、文体先验、触发维度、反 AI 加分项、给编辑的可操作建议），**禁止**输出"本文是 AI 生成的"这类二元判决。
-2. **ai味修复 skill**（对外）：输入识别 skill 产出的报告 + 原内容，针对报告中标出的具体维度/段落做修改，不做规则之外的无依据整体重写。
-3. **ai味规则更新 skill**（对内，本项目自用）：输入新的例句/案例，更新 `references/rules.md`——校验案例是否有真实的网友吐槽/指认支撑（§0.0 的唯一判据），决定是新增维度、调整某维度的密度阈值/降权系数，还是补充 Layer D 反例，并同步更新文件末尾的版本记录。
+| skill | 位置 | 面向 | 职责 |
+|---|---|---|---|
+| `ai-flavor-detect` | `skills/ai-flavor-detect/` | 对外（随 plugin 分发） | **严格模式**：只按 `rules.md` 现有规则判定，输出 §0.2 报告 + 机器可比对的"命中清单" |
+| `ai-flavor-fix`（未实现） | `skills/ai-flavor-fix/` | 对外 | 输入识别报告 + 原文，只修报告标出的维度/段落 |
+| `add-flavor-case` | `.claude/skills/add-flavor-case/` | 本仓库自用 | **发散模式**：从用户例句找 AI 味 → 修复 → 生成回归 case → 更新 `rules.md` → 用 `ai-flavor-detect` 回归 → 精简扫描 |
 
-Skill 1、2 是最终交付给外部用户使用的能力；Skill 3 是本项目内部维护 `rules.md` 时用的工具，三者共享同一份规则文件，不要各自维护副本。
+两种"识别"性质相反、不共享逻辑：detect 不发散，add-flavor-case 不严格。所有 skill 只引用 `references/rules.md`，不内嵌规则摘要。
 
-## 现状
+本仓库是一个 Claude Code plugin（`.claude-plugin/plugin.json`），本地测试用 `claude --plugin-dir .`。
 
-仓库目前只有 `references/rules.md`，三个 skill 尚未实现。新增 skill 时遵循标准 Claude Code skill 目录结构（`SKILL.md` + 必要的脚本/资源），并在 `SKILL.md` 里明确标注它依赖 `references/rules.md` 作为判据来源，而不是内嵌一份规则摘要（避免规则更新后各 skill 描述漂移不同步）。
+## 回归集
+
+- `regression/cases/<ruleid>-<nn>/`：每个 case 含 `meta.md`（`target_rules`、`origin`、文本与期望表）与文本文件。验收标准是**目标规则**是否命中（A/B/C 看有效命中、D 看 Layer D 命中、G 看文体先验、A-04.2/A-06.2 看排除项应用），疑似度分只作参考。
+- `regression/runs/`：每次回归跑测的记录。
+- `references/cases.md`：`add-flavor-case` 的叙述性日志，记"为什么改"。
+- `scripts/lint-regression.sh [--final] [--coverage]`：结构校验（id 唯一且存在、文件存在、rules.md 无书名引用 / 占位符）。任何改动 `rules.md` 或 case 后必须跑通。
+- B-01 / B-05 为全书级规则，回归集不覆盖。
+
+## 修改 rules.md 的唯一途径
+
+通过 `/add-flavor-case`。不要手工改判断口径；每次变更必须有 case 保护、经回归、版本 +0.1 并写入"## 版本"。

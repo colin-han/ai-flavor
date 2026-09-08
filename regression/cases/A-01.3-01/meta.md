@@ -4,7 +4,7 @@
 - source: 摘自 ../custom-writing/books/cenji/v1/04-drafts/chapters/ch03-anhei.md（连续段落原文，未改字）
 - origin: 规则覆盖夹具
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3.1
 - known_other_issues: [A-09.1]
 - score_ref: text ≈ 25
 

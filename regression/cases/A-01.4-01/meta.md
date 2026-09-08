@@ -4,9 +4,9 @@
 - source: 用户提供（before.md 即 case A-01.1-01 的 after.md 全文；after.md 为本次最小修复）
 - origin: 主观样本（维护者阅读判定，2026-09-07）
 - created: 2026-09-07
-- verified_at: 未验证
+- verified_at: rules.md v3.1
 - known_other_issues: []
-- score_ref: before ≈ 30 / after ≈ 15
+- score_ref: before ≈ 40 / after ≈ 18（v3.1 回归实测）
 
 ## 文本与期望
 

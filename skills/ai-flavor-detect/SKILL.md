@@ -1,13 +1,13 @@
 ---
 name: ai-flavor-detect
-description: 识别文本的"AI 味"——按 references/rules.md 的四层判据给出疑似度（低/中/高 + 0–100 分）、触发规则、人味加分项与可操作修改建议。当用户要"看看这段像不像 AI 写的 / 有没有 AI 味 / 审一下 AI 味 / 帮我去 AI 味前先诊断"时使用。绝不输出"这是 AI 生成的"二元判决。
+description: 识别文本的"AI 味"——按 rules/rules.md 的四层判据给出疑似度（低/中/高 + 0–100 分）、触发规则、人味加分项与可操作修改建议。当用户要"看看这段像不像 AI 写的 / 有没有 AI 味 / 审一下 AI 味 / 帮我去 AI 味前先诊断"时使用。绝不输出"这是 AI 生成的"二元判决。
 ---
 
 # ai-flavor-detect
 
 ## 判据来源（唯一）
 
-规则文件：`${CLAUDE_PLUGIN_ROOT}/references/rules.md`。若 `CLAUDE_PLUGIN_ROOT` 为空（在本仓库内直接使用），则为仓库根目录下 `references/rules.md`。
+规则文件：`${CLAUDE_PLUGIN_ROOT}/rules/rules.md`。若 `CLAUDE_PLUGIN_ROOT` 为空（在本仓库内直接使用），则为仓库根目录下 `rules/rules.md`。
 
 **每次执行都重新读取该文件全文**，不依赖记忆中的旧版本。本文件不复述任何规则条目；规则以 rules.md 为准。
 

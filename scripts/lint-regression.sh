@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 # 回归集结构校验：rule id 定义唯一、case 引用的 id 存在、文件存在、rules.md 无书名引用；
+# 扫 regression/quantitative（定量）与 regression/qualitative（定性）；regression/drafts 整个跳过（草稿允许引用未定义的 id）；
 # --final 额外要求无 [→case] 占位符；--coverage 列出无 case 支撑的规则（仅提示）。
 set -uo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-RULES="$ROOT/references/rules.md"
-CASES="$ROOT/regression/cases"
+RULES="$ROOT/rules/rules.md"
+QUANT="$ROOT/regression/quantitative"
+QUAL="$ROOT/regression/qualitative"
 FINAL=0; COVERAGE=0
 for a in "$@"; do
   case "$a" in
@@ -41,7 +43,14 @@ fi
 # 4. 逐 case 校验
 in_set() { echo "$2" | grep -qxF "$1"; }
 used=""
-for dir in "$CASES"/*/; do
+
+# 公共字段
+common_fields() { # $1=id $2=meta
+  for f in origin created verified_at; do grep -qE "^- $f:" "$2" || err "$1: meta.md 缺字段 $f"; done
+}
+
+# 定量 case：目录名 <ruleid>-<nn>，target_rules + 命中期望表
+for dir in "$QUANT"/*/; do
   [ -d "$dir" ] || continue
   id=$(basename "$dir")
   meta="$dir/meta.md"
@@ -52,7 +61,7 @@ for dir in "$CASES"/*/; do
   [ -n "$targets" ] || err "$id: meta.md 缺 target_rules"
   echo "$targets" | grep -qxF "$main" || err "$id: 目录名主规则 $main 不在 target_rules 中"
   for t in $targets; do in_set "$t" "$valid" || err "$id: target_rules 含未定义 id $t"; used="$used $t"; done
-  for f in origin created verified_at; do grep -qE "^- $f:" "$meta" || err "$id: meta.md 缺字段 $f"; done
+  common_fields "$id" "$meta"
   rows=$(grep -E '^\| *[^| ]+\.md *\|' "$meta")
   [ -n "$rows" ] || err "$id: meta.md 缺文本与期望表"
   while IFS= read -r row; do
@@ -64,7 +73,28 @@ for dir in "$CASES"/*/; do
     done
   done <<< "$rows"
 done
-ok "case 目录扫描完成"
+ok "定量 case 扫描完成（$(ls -1 "$QUANT" 2>/dev/null | wc -l | tr -d ' ') 个）"
+
+# 定性 case：目录名 <topic>-<nn>，background + expect_order（≥2 个版本，只比序）
+for dir in "$QUAL"/*/; do
+  [ -d "$dir" ] || continue
+  id=$(basename "$dir")
+  meta="$dir/meta.md"
+  [ -f "$meta" ] || { err "$id: 缺 meta.md"; continue; }
+  echo "$id" | grep -qE '^[a-z0-9-]+-[0-9]{2}$' || err "$id: 目录名不符合 <topic>-<nn>（小写字母/数字/连字符）"
+  grep -qE '^- kind: qualitative' "$meta" || err "$id: meta.md 缺 kind: qualitative"
+  grep -qE '^## 背景' "$meta" || err "$id: meta.md 缺「## 背景」小节（定性比序的前提是背景相同且显式喂给 detect）"
+  common_fields "$id" "$meta"
+  order=$(grep -E '^- expect_order:' "$meta" | sed -E 's/^- expect_order: *\[(.*)\].*/\1/' | tr ',' ' ')
+  [ -n "$order" ] || { err "$id: meta.md 缺 expect_order"; continue; }
+  n=0
+  for v in $order; do
+    n=$((n+1))
+    [ -f "$dir/$v.md" ] || err "$id: expect_order 中的 $v 没有对应的 $v.md"
+  done
+  [ "$n" -ge 2 ] || err "$id: expect_order 至少要两个版本才能比序"
+done
+ok "定性 case 扫描完成（$(ls -1 "$QUAL" 2>/dev/null | wc -l | tr -d ' ') 个）"
 
 # 5. 覆盖提示
 if [ "$COVERAGE" = 1 ]; then

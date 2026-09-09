@@ -1,6 +1,6 @@
 # add-flavor-case 更新日志
 
-> 每次 `add-flavor-case` 成功落盘追加一条。记"为什么改"；可重跑的验证在 `regression/cases/`。
+> 每次 `add-flavor-case` 成功落盘追加一条。记"为什么改"；可重跑的验证在 `regression/quantitative/`（定量）与 `regression/qualitative/`（定性）。
 
 <!-- 条目格式：
 ## YYYY-MM-DD · case <id> · rules.md vX.Y
